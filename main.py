@@ -36,6 +36,12 @@ class Calculator(QWidget):
 
         self.setLayout(grid)
 
+    def calculate(self):
+
+            value = float(self.enter_box.text())
+            feet = value * 30.48
+
+
 
 
 app = QApplication(sys.argv)
