@@ -22,6 +22,10 @@ class Calculator(QWidget):
         self.unit_combo = QComboBox()
         self.unit_combo.addItems(["Feet (ft)", "Centimeter (cm)"])
 
+        calculate_button = QPushButton("Convert")
+        calculate_button.clicked.connect(self.calculate)
+        self.output_label = QLabel("")
+
 
 
 
