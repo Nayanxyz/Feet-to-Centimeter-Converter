@@ -1,0 +1,87 @@
+1. The Core Libraries
+
+    PyQt6.QtWidgets
+
+        Definition: The visual toolkit required to construct a desktop graphical user interface (GUI).
+
+        Usage: It provides the raw materials (the window, the buttons, the text boxes) used to
+               build the physical appearance of the calculator.
+
+    sys
+
+        Definition: A system-level module that allows the Python script to communicate directly with the computer's operating system.
+
+        Usage: It is used to capture command-line arguments when the app is launched (sys.argv) and
+                to securely terminate the application process when the user clicks the "X" to close the window (sys.exit()).
+
+2. The Application Elements (Widgets)
+
+    QApplication
+
+        Definition: The core background engine that runs the entire visual program.
+
+        Usage: It manages the graphical control flow and main settings.
+                No PyQt6 window can appear on a screen without this engine running first.
+
+    QWidget
+
+        Definition: The blank canvas. It is the most basic, empty window element in the PyQt framework.
+
+        Usage: It acts as the foundational container that holds all the other buttons and labels.
+
+    QGridLayout
+
+        Definition: An invisible organizational tool that arranges elements into strict rows and columns, like a spreadsheet.
+
+        Usage: It forces the labels, text boxes, and dropdown menus to align perfectly on the screen using
+                coordinate points (e.g., placing the calculate button at row 2, column 0).
+
+    QLabel
+
+        Definition: A static text element.
+
+        Usage: It is used to display non-editable instructions on the screen (like "Enter Value :") and
+                to output the final calculated result to the user.
+
+    QLineEdit
+
+        Definition: A single-line blank text box.
+
+        Usage: It allows the user to physically type their number into the application.
+
+    QComboBox
+
+        Definition: A clickable dropdown menu.
+
+        Usage: It provides the user with a restricted list of choices (Feet or Centimeters) so they cannot type an invalid unit.
+
+    QPushButton
+
+        Definition: A standard, clickable digital button.
+
+        Usage: It acts as the trigger mechanism. When clicked, it fires a signal that tells the application to run the math equations.
+
+3. The Custom Classes and Methods
+
+    Class: Calculator (Inherits from QWidget)
+
+        Definition: The custom blueprint that defines the complete physical window and the logic of the converter.
+
+        Usage: It bundles the visual layout (the grid) and the mathematical logic (the conversion) into one single, reusable object.
+
+    Method: __init__
+
+        Definition: The constructor method. This is the setup phase that runs automatically the exact millisecond the Calculator is created.
+
+        Usage: It builds the physical interface. It sets the window title, creates the grid,
+                summons all the widgets (labels, boxes, buttons), places them into the grid,
+                and connects the "Convert" button to the math function.
+
+    Method: calculate
+
+        Definition: The operational logic engine. This function only runs when the "Convert" button is physically clicked.
+
+        Usage: It extracts the raw text from the input box, forces it to become a decimal number (float),
+                checks which unit is selected in the dropdown menu, performs the appropriate multiplication or division,
+                 and updates the text on the screen. It also contains error handling (try/except) to prevent the program
+                  from crashing if the user types a letter instead of a number.
