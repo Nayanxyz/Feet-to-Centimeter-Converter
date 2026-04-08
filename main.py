@@ -41,6 +41,12 @@ class Calculator(QWidget):
             value = float(self.enter_box.text())
             feet = value * 30.48
 
+            selected_text = self.unit_combo.currentText()
+            if selected_text == "Feet (ft)":
+                self.output_label.setText(f" {value} ft is {feet} cm.")
+            if selected_text == "Centimeter (cm)":
+                new_value = value/30.48
+                self.output_label.setText(f" {value} cm is {new_value:.2f} ft.")           # :.2f to get only 2 values after decimal
 
 
 
