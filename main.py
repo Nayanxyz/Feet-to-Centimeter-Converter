@@ -26,6 +26,15 @@ class Calculator(QWidget):
         calculate_button.clicked.connect(self.calculate)
         self.output_label = QLabel("")
 
+        grid.addWidget(enter_label, 0,0)
+        grid.addWidget(self.enter_box, 0, 1)
+        grid.addWidget(self.unit_combo, 0, 2)
+        grid.addWidget(value_label, 1, 0)
+        grid.addWidget(calculate_button, 2, 0, 1, 2)
+        grid.addWidget(self.output_label, 3, 0, 1, 2)
+
+
+        self.setLayout(grid)
 
 
 
