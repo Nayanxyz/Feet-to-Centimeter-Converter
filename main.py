@@ -49,8 +49,7 @@ class Calculator(QWidget):
                 self.output_label.setText(f" {value} cm is {new_value:.2f} ft.")           # :.2f to get only 2 values after decimal
         except ValueError:
             self.output_label.setText("Error: Please enter valid numbers!.")
-        except ZeroDivisionError:
-            self.output_label.setText("Error: Time cannot be zero!.")
+
 
 
 app = QApplication(sys.argv)
