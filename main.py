@@ -50,7 +50,7 @@ class Calculator(QWidget):
             if selected_text == "Centimeter (cm)":
                 new_value = value/30.48
                 new_value_cm = value / 2.54
-                self.output_label.setText(f" {value} cm is {new_value:.2f} ft and {new_value_cm} inch.")           # :.2f to get only 2 values after decimal
+                self.output_label.setText(f" {value} cm is {new_value:.2f} ft and {new_value_cm:.2f} inch.")           # :.2f to get only 2 values after decimal
 
             if selected_text == "Inch":
                 new_value_inch_a = value / 12
