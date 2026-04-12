@@ -40,6 +40,7 @@ class Calculator(QWidget):
         try:
             value = float(self.enter_box.text())
             feet = value * 30.48
+            new_feet = value * 12
 
             selected_text = self.unit_combo.currentText()
             if selected_text == "Feet (ft)":
