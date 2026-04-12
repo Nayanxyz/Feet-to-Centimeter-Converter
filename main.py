@@ -37,6 +37,7 @@ class Calculator(QWidget):
         self.setLayout(grid)
 
     def calculate(self):
+
         try:
             value = float(self.enter_box.text())
             feet = value * 30.48
@@ -45,14 +46,17 @@ class Calculator(QWidget):
             selected_text = self.unit_combo.currentText()
             if selected_text == "Feet (ft)":
                 self.output_label.setText(f" {value} ft is {feet} cm and {new_feet} inch.")
+
             if selected_text == "Centimeter (cm)":
                 new_value = value/30.48
                 new_value_cm = value / 2.54
                 self.output_label.setText(f" {value} cm is {new_value:.2f} ft and {new_value_cm} inch.")           # :.2f to get only 2 values after decimal
+
             if selected_text == "Inch":
                 new_value_inch_a = value / 12
                 new_value_inch_b = value * 2.54
                 self.output_label.setText(f" {value} inch is {new_value_inch_a:.2f} ft and {new_value_inch_b} cm.")
+
         except ValueError:
             self.output_label.setText("Error: Please enter valid numbers!.")
 
