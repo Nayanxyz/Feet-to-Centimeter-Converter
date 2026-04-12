@@ -20,7 +20,7 @@ class Calculator(QWidget):
         value_label = QLabel("( Feet or cm ) ")
 
         self.unit_combo = QComboBox()
-        self.unit_combo.addItems(["Feet (ft)", "Centimeter (cm)"])
+        self.unit_combo.addItems(["Feet (ft)", "Centimeter (cm)", "Inch "])
 
         calculate_button = QPushButton("Convert")
         calculate_button.clicked.connect(self.calculate)
