@@ -44,7 +44,7 @@ class Calculator(QWidget):
 
             selected_text = self.unit_combo.currentText()
             if selected_text == "Feet (ft)":
-                self.output_label.setText(f" {value} ft is {feet} cm.")
+                self.output_label.setText(f" {value} ft is {feet} cm and {new_feet}.")
             if selected_text == "Centimeter (cm)":
                 new_value = value/30.48
                 self.output_label.setText(f" {value} cm is {new_value:.2f} ft.")           # :.2f to get only 2 values after decimal
