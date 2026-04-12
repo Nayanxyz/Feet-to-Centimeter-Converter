@@ -48,8 +48,9 @@ class Calculator(QWidget):
                 new_value = value/30.48
                 self.output_label.setText(f" {value} cm is {new_value:.2f} ft.")           # :.2f to get only 2 values after decimal
             if selected_text == "Inch":
-                new_value_inch = value / 12
-                self.output_label.setText(f" {value} inch is {new_value_inch:.2f} ft.")
+                new_value_inch_a = value / 12
+                new_value_inch_b = value * 2.54
+                self.output_label.setText(f" {value} inch is {new_value_inch_a:.2f} ft and {new_value_inch_b} cm.")
         except ValueError:
             self.output_label.setText("Error: Please enter valid numbers!.")
 
