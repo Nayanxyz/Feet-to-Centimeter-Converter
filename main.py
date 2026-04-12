@@ -20,7 +20,7 @@ class Calculator(QWidget):
         value_label = QLabel("( Feet or cm ) ")
 
         self.unit_combo = QComboBox()
-        self.unit_combo.addItems(["Feet (ft)", "Centimeter (cm)", "Inch "])
+        self.unit_combo.addItems(["Feet (ft)", "Centimeter (cm)", "Inch"])
 
         calculate_button = QPushButton("Convert")
         calculate_button.clicked.connect(self.calculate)
@@ -47,6 +47,9 @@ class Calculator(QWidget):
             if selected_text == "Centimeter (cm)":
                 new_value = value/30.48
                 self.output_label.setText(f" {value} cm is {new_value:.2f} ft.")           # :.2f to get only 2 values after decimal
+            if selected_text == "Inch":
+                new_value_inch = value / 12
+
         except ValueError:
             self.output_label.setText("Error: Please enter valid numbers!.")
 
